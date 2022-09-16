@@ -1,5 +1,5 @@
 export const CRYPTODEVS_DAO_CONTRACT_ADDRESS = "0x3494F530C8F9A4ceE7331325e12Ed60758d38CE9";
-export const CRYPTODEVS_NFT_CONTRACT_ADDRESS = "0x667B099EAE2f9D538bD873c116B51144663C5f45";
+export const CRYPTODEVS_NFT_CONTRACT_ADDRESS = "0x51F9133a248F6D94b90c2E5CCE489a86f68a486E";
 
 export const CRYPTODEVS_DAO_ABI = [
     {
@@ -52,25 +52,12 @@ export const CRYPTODEVS_NFT_ABI = [
     {
       "inputs": [
         {
-          "internalType": "uint256",
-          "name": "_tokenId",
-          "type": "uint256"
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
         }
       ],
-      "name": "available",
-      "outputs": [
-        {
-          "internalType": "bool",
-          "name": "",
-          "type": "bool"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getPrice",
+      "name": "balanceOf",
       "outputs": [
         {
           "internalType": "uint256",
@@ -83,31 +70,23 @@ export const CRYPTODEVS_NFT_ABI = [
     },
     {
       "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "_tokenId",
-          "type": "uint256"
-        }
-      ],
-      "name": "purchase",
-      "outputs": [],
-      "stateMutability": "payable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "name": "tokens",
-      "outputs": [
         {
           "internalType": "address",
-          "name": "",
+          "name": "owner",
           "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenOfOwnerByIndex",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
